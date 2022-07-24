@@ -7,8 +7,8 @@ import Container from '@mui/material/Container';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import CardListView from './features/counter/Cardlist';
-import CardForm from './features/counter/CardForm';
+import CardListView from './features/cardlist/Cardlist';
+import CardForm from './features/cardlist/CardForm';
 
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 

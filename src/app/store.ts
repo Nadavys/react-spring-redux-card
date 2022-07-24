@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import cardlistReducer from '../features/counter/cardlistSlice';
+import cardlistReducer from '../features/cardlist/cardlistSlice';
 import { debounce } from "debounce";
 
 const KEY = "redux_saved";
