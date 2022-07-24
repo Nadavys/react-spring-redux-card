@@ -1,8 +1,9 @@
 {
-  "name": "animation-card-demo",
+  "name": "react-spring-redux-card",
   "version": "0.1.0",
+  "homepage": "https://nadavys.github.io/react-spring-redux-card",
   "private": false,
-  "dependencies": {
+    "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
@@ -31,7 +32,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +55,7 @@
     ]
   },
   "devDependencies": {
-    "@types/debounce": "^1.2.1"
+    "@types/debounce": "^1.2.1",
+    "gh-pages": "^4.0.0"
   }
 }
