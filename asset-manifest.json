@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-spring-redux-card/static/css/main.a0f641eb.css",
-    "main.js": "/react-spring-redux-card/static/js/main.6a6a3e1a.js",
+    "main.js": "/react-spring-redux-card/static/js/main.a95bf3d7.js",
     "index.html": "/react-spring-redux-card/index.html",
     "main.a0f641eb.css.map": "/react-spring-redux-card/static/css/main.a0f641eb.css.map",
-    "main.6a6a3e1a.js.map": "/react-spring-redux-card/static/js/main.6a6a3e1a.js.map"
+    "main.a95bf3d7.js.map": "/react-spring-redux-card/static/js/main.a95bf3d7.js.map"
   },
   "entrypoints": [
     "static/css/main.a0f641eb.css",
-    "static/js/main.6a6a3e1a.js"
+    "static/js/main.a95bf3d7.js"
   ]
 }
