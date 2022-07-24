@@ -4,8 +4,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-
-
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -29,8 +27,6 @@ function App() {
   );
 
   return (
-    <div >
-
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -57,10 +53,7 @@ function App() {
         </Box>
         <ToastContainer />
       </Container>
-
-    </div>
   );
 }
 
 export default App;
-// export default animated(App);

@@ -88,6 +88,8 @@ export default function CardListView() {
               key={card.name + card.color + index}
             >
               <DemoCard card={card}
+                isFirst={index === 0}
+                isLast={index === cardlist.length-1}
                 onDelete={() => { dispatch(removeCard(index)) }}
                 onPlaceStart={() => handleClickPlaceStart(index)}
                 onPlaceEnd={() => handleClickPlaceEnd(index)}
@@ -100,7 +102,7 @@ export default function CardListView() {
   );
 }
 
-function DemoCard({ card: { name, color }, onDelete, onPlaceStart, onPlaceEnd }: { card: ICard, onDelete: (() => void), onPlaceStart: () => void, onPlaceEnd: () => void }) {
+function DemoCard({ card: { name, color }, isFirst, isLast, onDelete, onPlaceStart, onPlaceEnd }: { card: ICard, isFirst: boolean, isLast: boolean, onDelete: (() => void), onPlaceStart: () => void, onPlaceEnd: () => void }) {
 
   return (
     <Card sx={{ backgroundColor: color, width: "8rem", height: "12rem" }} raised>
@@ -109,15 +111,21 @@ function DemoCard({ card: { name, color }, onDelete, onPlaceStart, onPlaceEnd }:
           {name}
         </Typography>
       </CardContent>
-      <Box sx={{ display: 'flex', justifyContent: "space-between" }}>
-        <IconButton aria-label="previous" onClick={onPlaceStart}>
-          <StartIcon />
-        </IconButton>
+      <Box sx={{ display: 'flex', justifyContent:"space-around" }}>
 
-        <IconButton aria-label="next" onClick={onPlaceEnd} >
-          <EndIcon />
-        </IconButton>
+        {!isFirst &&
+          <IconButton aria-label="previous" onClick={onPlaceStart} sx={{justifySelf:"left"}}>
+            <StartIcon />
+          </IconButton>
+        }
+
+        {!isLast &&
+          <IconButton aria-label="next" onClick={onPlaceEnd} sx={{placeSelf:"right"}}>
+            <EndIcon />
+          </IconButton>
+        }
       </Box>
+
 
       <CardActions >
         <Button variant="contained" color="error" size="small" onClick={onDelete}
