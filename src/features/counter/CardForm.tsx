@@ -69,7 +69,7 @@ export default function CardForm() {
           >
             <MenuItem value=""></MenuItem>
             {cssColors.map(
-              (color, index) => <MenuItem value={color} key={index}>{color}</MenuItem>
+              (color, index) => <MenuItem value={color} key={index}>{camelCaseToSpaces(color)}</MenuItem>
             )}
 
           </Select>
@@ -89,3 +89,8 @@ export default function CardForm() {
     </Box>
   );
 }
+
+
+function camelCaseToSpaces(s:string){
+  return s.replace(/([a-z])([A-Z])/g, (a, b, c) => `${b} ${c}`);
+};

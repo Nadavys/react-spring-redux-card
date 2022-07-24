@@ -77,7 +77,6 @@ export default function CardListView() {
     )
   }
 
-  const list: any = [];
   return (
     <Fragment>
       <Stack sx={{ mt: 5 }} spacing={1} direction="row" >
@@ -96,18 +95,16 @@ export default function CardListView() {
               /> </animated.div>
           }
         )}
-
       </Stack>
     </Fragment>
   );
 }
 
 function DemoCard({ card: { name, color }, isFirst, isLast, onDelete, onPlaceStart, onPlaceEnd }: { card: ICard, isFirst: boolean, isLast: boolean, onDelete: (() => void), onPlaceStart: () => void, onPlaceEnd: () => void }) {
-
   return (
     <Card sx={{ backgroundColor: color, width: "8rem", height: "12rem" }} raised>
       <CardContent>
-        <Typography align='center' gutterBottom variant="caption" component="div" sx={{ backgroundColor: "lightgray", textTransform: "capitalize", borderRadius: "5px", color }}>
+        <Typography align='center' gutterBottom variant="caption" component="div" sx={{ backgroundColor: "lightgray", borderRadius: "3px", color }}>
           {name}
         </Typography>
       </CardContent>
@@ -117,7 +114,7 @@ function DemoCard({ card: { name, color }, isFirst, isLast, onDelete, onPlaceSta
           <IconButton aria-label="previous" onClick={onPlaceStart} sx={{justifySelf:"left"}}>
             <StartIcon />
           </IconButton>
-        }
+        } 
 
         {!isLast &&
           <IconButton aria-label="next" onClick={onPlaceEnd} sx={{placeSelf:"right"}}>
