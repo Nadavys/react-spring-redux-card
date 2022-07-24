@@ -1,58 +1,66 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+
+import CssBaseline from '@mui/material/CssBaseline';
+
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import CardListView from './features/counter/Cardlist';
+import CardForm from './features/counter/CardForm';
+
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+import { Divider } from '@mui/material';
+import { useSpring, animated } from '@react-spring/web';
 
 function App() {
+
+  const props = useSpring(
+    {
+      to: { opacity: 1, translateY: 0, scale: 1 },
+      from: { opacity: 0, translateY: -50, scale: 5 },
+      delay: 300,
+ 
+    }
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div >
+
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+
+          <animated.div style={props}>
+            <Typography component="h1" variant="h5">
+            <ContentCopyIcon sx={{transform:"translatey(3px)"}}/> Card List Demo
+            </Typography>
+          </animated.div>
+
+          <CardForm />
+
+          <Divider />
+
+          <CardListView />
+
+        </Box>
+        <ToastContainer />
+      </Container>
+
     </div>
   );
 }
 
 export default App;
+// export default animated(App);
